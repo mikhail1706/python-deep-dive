@@ -1,5 +1,5 @@
 """
-    Mediator: chat room
+Mediator: chat room
 """
 
 
@@ -10,8 +10,8 @@ class Person:
         self.room = None
 
     def receive(self, sender, message):
-        s = f'{sender}: {message}'
-        print(f'[{self.name}\' chat session] {s}')
+        s = f"{sender}: {message}"
+        print(f"[{self.name}' chat session] {s}")
         self.chat_log.append(s)
 
     def say(self, message):
@@ -26,8 +26,8 @@ class ChatRoom:
         self.people = []
 
     def join(self, person):
-        join_msg = f'{person.name} joins the chat'
-        self.broadcast('room', join_msg)
+        join_msg = f"{person.name} joins the chat"
+        self.broadcast("room", join_msg)
         person.room = self
         self.people.append(person)
 
@@ -42,20 +42,20 @@ class ChatRoom:
                 p.receive(source, message)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     room = ChatRoom()
 
-    john = Person('John')
-    jane = Person('Jane')
+    john = Person("John")
+    jane = Person("Jane")
 
     room.join(john)
     room.join(jane)
 
-    john.say('Hi room!')
-    jane.say('Oh, hey john')
+    john.say("Hi room!")
+    jane.say("Oh, hey john")
 
-    simon = Person('Simon')
+    simon = Person("Simon")
     room.join(simon)
-    simon.say('Hi everyone!')
+    simon.say("Hi everyone!")
 
-    jane.private_message('Simon', 'glad you could join u!s')
+    jane.private_message("Simon", "glad you could join u!s")

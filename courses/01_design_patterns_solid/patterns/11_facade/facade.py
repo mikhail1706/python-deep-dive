@@ -1,5 +1,5 @@
 """
-    Facade
+Facade
 """
 
 
@@ -7,7 +7,7 @@ class Buffer:
     def __init__(self, width=30, height=20):
         self.width = width
         self.height = height
-        self.buffer = [' '] * (width * height)
+        self.buffer = [" "] * (width * height)
 
     def __getitem__(self, item):
         return self.buffer.__getitem__(item)
@@ -22,7 +22,7 @@ class Viewport:
         self.offset = 0
 
     def get_char_at(self, index):
-        return self.buffer[index+self.offset]
+        return self.buffer[index + self.offset]
 
     def append(self, text):
         self.buffer.write(text)
@@ -42,7 +42,7 @@ class Console:
         return self.current_viewport.get_char_at(index)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     c = Console()
-    c.write('hello')
+    c.write("hello")
     ch = c.get_char_at(0)

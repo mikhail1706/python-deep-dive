@@ -19,29 +19,26 @@ class AdditionExpression(Expression):
 class ExpressionPrinter:
     @staticmethod
     def print(e, buffer):
-        """ Will fail silently on a missing case. """
+        """Will fail silently on a missing case."""
         if isinstance(e, DoubleExpression):
             buffer.append(str(e.value))
         elif isinstance(e, AdditionExpression):
-            buffer.append('(')
+            buffer.append("(")
             ExpressionPrinter.print(e.left, buffer)
-            buffer.append('+')
+            buffer.append("+")
             ExpressionPrinter.print(e.right, buffer)
-            buffer.append(')')
+            buffer.append(")")
 
     Expression.print = lambda self, b: ExpressionPrinter.print(self, b)
 
 
 # still breaks OCP because new types require M×N modifications
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # represents 1+(2+3)
     e = AdditionExpression(
         DoubleExpression(1),
-        AdditionExpression(
-            DoubleExpression(2),
-            DoubleExpression(3)
-        )
+        AdditionExpression(DoubleExpression(2), DoubleExpression(3)),
     )
     buffer = []
 
@@ -50,4 +47,4 @@ if __name__ == '__main__':
     # IDE might complain here
     e.print(buffer)
 
-    print(''.join(buffer))
+    print("".join(buffer))

@@ -1,6 +1,6 @@
 """
-    Builder
-    Provides a fluent API for constructing a complex object step by step.
+Builder
+Provides a fluent API for constructing a complex object step by step.
 """
 
 
@@ -16,9 +16,11 @@ class Person:
         self.annual_income = None
 
     def __str__(self):
-        return f'Address: {self.street_address}, {self.postcode}, {self.city}' + \
-            f'Employed at {self.company_name} as a {self.position} ' \
-            f'earning {self.annual_income}'
+        return (
+            f"Address: {self.street_address}, {self.postcode}, {self.city}"
+            + f"Employed at {self.company_name} as a {self.position} "
+            f"earning {self.annual_income}"
+        )
 
 
 class PersonBuilder:
@@ -39,7 +41,7 @@ class PersonBuilder:
 
 class PersonJobBuilder(PersonBuilder):
     def __init__(self, person):
-        super(PersonJobBuilder, self).__init__(person)
+        super().__init__(person)
 
     def at(self, company_name):
         self.person.company_name = company_name
@@ -56,7 +58,7 @@ class PersonJobBuilder(PersonBuilder):
 
 class PersonAddressBuilder(PersonBuilder):
     def __init__(self, person):
-        super(PersonAddressBuilder, self).__init__(person)
+        super().__init__(person)
 
     def at(self, street_address):
         self.person.street_address = street_address
@@ -72,15 +74,14 @@ class PersonAddressBuilder(PersonBuilder):
 
 
 pb = PersonBuilder()
-person = pb\
-    .lives\
-        .at('123 London Road')\
-        .in_city('London')\
-        .with_postcode('SW12BC')\
-    .works\
-        .at('Fabrikam')\
-        .as_a('Engineer')\
-        .earning(123000)\
+person = (
+    pb.lives.at("123 London Road")
+    .in_city("London")
+    .with_postcode("SW12BC")
+    .works.at("Fabrikam")
+    .as_a("Engineer")
+    .earning(123000)
     .build()
+)
 
 print(person)

@@ -1,5 +1,5 @@
 """
-    Flyweight: text formatting
+Flyweight: text formatting
 """
 
 
@@ -16,11 +16,9 @@ class FormattedText:
         result = []
         for i in range(len(self.plain_text)):
             c = self.plain_text[i]
-            result.append(
-                c.upper() if self.caps[i] else c
-            )
+            result.append(c.upper() if self.caps[i] else c)
 
-        return ''.join(result)
+        return "".join(result)
 
 
 class BetterFormattedText:
@@ -50,11 +48,11 @@ class BetterFormattedText:
                 if r.covers(i) and r.capitalize:
                     c = c.upper()
             result.append(c)
-        return ''.join(result)
+        return "".join(result)
 
 
-if __name__ == '__main__':
-    text = 'This is a brave new world'
+if __name__ == "__main__":
+    text = "This is a brave new world"
     ft = FormattedText(text)
     ft.capitalise(10, 15)
     print(ft)

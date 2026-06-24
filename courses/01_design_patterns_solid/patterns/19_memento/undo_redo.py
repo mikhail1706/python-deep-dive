@@ -1,5 +1,5 @@
 """
-    Memento: undo redo
+Memento: undo redo
 """
 
 
@@ -44,10 +44,10 @@ class BankAccount:
         return None
 
     def __str__(self):
-        return f'Balance = {self.balance}'
+        return f"Balance = {self.balance}"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ba = BankAccount(100)
     ba.deposit(50)
     ba.deposit(25)
@@ -55,8 +55,8 @@ if __name__ == '__main__':
     print(ba)
 
     ba.undo()
-    print(f'Undo 1: {ba}')
+    print(f"Undo 1: {ba}")
     ba.undo()
-    print(f'Undo 2: {ba}')
+    print(f"Undo 2: {ba}")
     ba.redo()
-    print(f'Redo: {ba}')
+    print(f"Redo: {ba}")

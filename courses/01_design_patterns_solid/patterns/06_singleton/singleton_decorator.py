@@ -1,5 +1,5 @@
 """
-    Singleton decorator
+Singleton decorator
 """
 
 
@@ -17,10 +17,10 @@ def singleton(_class):
 @singleton
 class Database:
     def __init__(self):
-        print('Loading database')
+        print("Loading database")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     d1 = Database()
     d2 = Database()
     print(d1 == d2)

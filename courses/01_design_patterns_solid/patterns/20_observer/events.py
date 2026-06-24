@@ -1,5 +1,5 @@
 """
-    Events
+Events
 """
 
 
@@ -20,14 +20,12 @@ class Person:
 
 
 def call_doctor(name, address):
-    print(f'{name} needs a doctor at {address}')
+    print(f"{name} needs a doctor at {address}")
 
 
-if __name__ == '__main__':
-    person = Person('Sherlock', '221B Baker St')
-    person.falls_ill.append(
-        lambda name, address: print(f'{name} is ill')
-    )
+if __name__ == "__main__":
+    person = Person("Sherlock", "221B Baker St")
+    person.falls_ill.append(lambda name, address: print(f"{name} is ill"))
     person.falls_ill.append(call_doctor)
 
     person.catch_a_cold()

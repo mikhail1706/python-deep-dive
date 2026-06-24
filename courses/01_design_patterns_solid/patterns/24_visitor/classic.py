@@ -1,17 +1,17 @@
 """
-    Classic visitor with double dispatch
+Classic visitor with double dispatch
 """
 
 
 def _qualname(obj):
     """Get the fully-qualified name of an object (including module)."""
-    return obj.__module__ + '.' + obj.__qualname__
+    return obj.__module__ + "." + obj.__qualname__
 
 
 def _declaring_class(obj):
     """Get the name of the class that declared an object."""
     name = _qualname(obj)
-    return name[:name.rfind('.')]
+    return name[: name.rfind(".")]
 
 
 # Stores the actual visitor methods
@@ -41,6 +41,7 @@ def visitor(arg_type):
 
 # ↑↑↑ LIBRARY CODE ↑↑↑
 
+
 class DoubleExpression:
     def __init__(self, value):
         self.value = value
@@ -68,24 +69,21 @@ class ExpressionPrinter:
 
     @visitor(AdditionExpression)
     def visit(self, ae):
-        self.buffer.append('(')
+        self.buffer.append("(")
         ae.left.accept(self)
-        self.buffer.append('+')
+        self.buffer.append("+")
         ae.right.accept(self)
-        self.buffer.append(')')
+        self.buffer.append(")")
 
     def __str__(self):
-        return ''.join(self.buffer)
+        return "".join(self.buffer)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 1 + (2+3)
     e = AdditionExpression(
         DoubleExpression(1),
-        AdditionExpression(
-            DoubleExpression(2),
-            DoubleExpression(3)
-        )
+        AdditionExpression(DoubleExpression(2), DoubleExpression(3)),
     )
 
     printer = ExpressionPrinter()

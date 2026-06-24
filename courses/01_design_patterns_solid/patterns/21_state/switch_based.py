@@ -1,6 +1,4 @@
-"""
-
-"""
+""" """
 
 from enum import Enum, auto
 
@@ -11,10 +9,10 @@ class State(Enum):
     UNLOCKED = auto()
 
 
-if __name__ == '__main__':
-    code = '1234'
+if __name__ == "__main__":
+    code = "1234"
     state = State.LOCKED
-    entry = ''
+    entry = ""
 
     while True:
         if state == State.LOCKED:
@@ -27,10 +25,10 @@ if __name__ == '__main__':
                 state = State.FAILED
 
         elif state == State.FAILED:
-            print('\nFAILED')
-            entry = ''
+            print("\nFAILED")
+            entry = ""
             state = State.LOCKED
 
         elif state == State.UNLOCKED:
-            print('\nUNLOCKED')
+            print("\nUNLOCKED")
             break

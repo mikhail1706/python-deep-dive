@@ -48,6 +48,7 @@ class ProductFilter:
             if p.color == color and p.size == size:
                 yield p
 
+
 # 2 --> 3
 # 3 --> 7  c s w cs sw cw csw
 
@@ -57,6 +58,7 @@ class ProductFilter:
 
 class Specification:
     """Whether a specific item satisfies a given criterion."""
+
     def is_satisfied(self, item):
         pass
 
@@ -90,9 +92,7 @@ class AndSpecification(Specification):
         self.args = args
 
     def is_satisfied(self, item):
-        return all(map(
-            lambda spec: spec.is_satisfied(item), self.args
-        ))
+        return all(map(lambda spec: spec.is_satisfied(item), self.args))
 
 
 class BetterFilter(Filter):
@@ -102,36 +102,33 @@ class BetterFilter(Filter):
                 yield item
 
 
-if __name__ == '__main__':
-    apple = Product('Apple', Color.GREEN, Size.SMALL)
-    tree = Product('Tree', Color.GREEN, Size.LARGE)
-    house = Product('House', Color.BLUE, Size.LARGE)
+if __name__ == "__main__":
+    apple = Product("Apple", Color.GREEN, Size.SMALL)
+    tree = Product("Tree", Color.GREEN, Size.LARGE)
+    house = Product("House", Color.BLUE, Size.LARGE)
 
     products = [apple, tree, house]
     pf = ProductFilter()
-    print('Green products (old):')
+    print("Green products (old):")
     for p in pf.filter_by_color(products, Color.GREEN):
-        print(f' - {p.name} is Green')
+        print(f" - {p.name} is Green")
 
     bf = BetterFilter()
 
-    print('Green products (new):')
+    print("Green products (new):")
     green = ColorSpecification(Color.GREEN)
     for p in bf.filter(products, green):
-        print(f' - {p.name} is Green')
+        print(f" - {p.name} is Green")
 
-    print('Large products:')
+    print("Large products:")
     large = SizeSpecification(Size.LARGE)
     for p in bf.filter(products, large):
-        print(f' - {p.name} is Large')
+        print(f" - {p.name} is Large")
 
-    print('Large blue items:')
+    print("Large blue items:")
     # large_blue = AndSpecification(large,
     #                               ColorSpecification(Color.BLUE))
     large_blue = large & ColorSpecification(Color.BLUE)
 
     for p in bf.filter(products, large_blue):
-        print(f' - {p.name} is Large and Blue')
-
-
-
+        print(f" - {p.name} is Large and Blue")

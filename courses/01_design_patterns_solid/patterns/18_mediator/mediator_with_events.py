@@ -1,5 +1,5 @@
 """
-    Mediator with events
+Mediator with events
 """
 
 
@@ -42,14 +42,13 @@ class Coach:
         game.events.append(self.celebrate_goal)
 
     def celebrate_goal(self, args):
-        if isinstance(args, GoalScoredInfo) and \
-                args.goals_scored < 3:
-            print(f'Coach says: well done, {args.who_scored}')
+        if isinstance(args, GoalScoredInfo) and args.goals_scored < 3:
+            print(f"Coach says: well done, {args.who_scored}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     game = Game()
-    player = Player('Sam', game)
+    player = Player("Sam", game)
     coach = Coach(game)
 
     player.score()

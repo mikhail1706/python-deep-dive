@@ -1,5 +1,5 @@
 """
-    Adapter without caching
+Adapter without caching
 """
 
 """
@@ -14,13 +14,14 @@ class Point:
 
 
 def draw_point(p):
-    print('.', end='')
+    print(".", end="")
 
 
 # ^^ you given this
 
 
 # vv
+
 
 class Line:
     def __init__(self, start, end):
@@ -42,9 +43,11 @@ class LineToPointAdapter(list):
 
     def __init__(self, line):
         self.count += 1
-        print(f'{self.count}: Generating points for line '
-              f'[{line.start.x},{line.start.y}]→'
-              f'[{line.end.x},{line.end.y}]')
+        print(
+            f"{self.count}: Generating points for line "
+            f"[{line.start.x},{line.start.y}]→"
+            f"[{line.end.x},{line.end.y}]"
+        )
 
         left = min(line.start.x, line.end.x)
         right = max(line.start.x, line.end.x)
@@ -60,7 +63,7 @@ class LineToPointAdapter(list):
 
 
 def draw(rcs):
-    print('\n\n--- Drawing some stuff ---\n')
+    print("\n\n--- Drawing some stuff ---\n")
 
     for rc in rcs:
         for line in rc:
@@ -69,11 +72,7 @@ def draw(rcs):
                 draw_point(p)
 
 
-if __name__ == '__main__':
-    rs = [
-        Rectangle(1, 1, 10, 10),
-        Rectangle(3, 3, 6, 6)
-    ]
+if __name__ == "__main__":
+    rs = [Rectangle(1, 1, 10, 10), Rectangle(3, 3, 6, 6)]
     draw(rs)
     draw(rs)
-

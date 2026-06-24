@@ -10,6 +10,7 @@ It may seem like a good idea to implement one large interface and let
 clients implement it however they like — but it forces implementors to
 stub out methods they don't need.
 """
+
 from abc import abstractmethod
 
 
@@ -41,11 +42,11 @@ class OldFashionPrinter(Machine):
         pass
 
     def fax(self, document):
-        pass # noop
+        pass  # noop
 
     def scan(self, document):
         """Not supported!"""
-        raise NotImplementedError('Printer cannot scan!')
+        raise NotImplementedError("Printer cannot scan!")
 
 
 class Printer:

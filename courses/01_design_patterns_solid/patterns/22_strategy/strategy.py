@@ -1,6 +1,7 @@
 """
-    Strategy
+Strategy
 """
+
 from abc import ABC
 from enum import Enum, auto
 
@@ -18,18 +19,18 @@ class ListStrategy(ABC):
 
 class MarkdownListStrategy(ListStrategy):
     def add_list_item(self, buffer, item):
-        buffer.append(f'* {item}\n')
+        buffer.append(f"* {item}\n")
 
 
 class HtmlListStrategy(ListStrategy):
     def start(self, buffer):
-        buffer.append('<u> \n')
+        buffer.append("<u> \n")
 
     def end(self, buffer):
-        buffer.append('</ul>\n')
+        buffer.append("</ul>\n")
 
     def add_list_item(self, buffer, item):
-        buffer.append(f'  <li> {item}</li>\n')
+        buffer.append(f"  <li> {item}</li>\n")
 
 
 class OutputFormat(Enum):
@@ -60,11 +61,11 @@ class TextProcessor:
         self.buffer.clear()
 
     def __str__(self):
-        return ''.join(self.buffer)
+        return "".join(self.buffer)
 
 
-if __name__ == '__main__':
-    items = ['foo', 'bar', 'baz']
+if __name__ == "__main__":
+    items = ["foo", "bar", "baz"]
 
     tp = TextProcessor()
     tp.set_output_format(OutputFormat.MARKDOWN)

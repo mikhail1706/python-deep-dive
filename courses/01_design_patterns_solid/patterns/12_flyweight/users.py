@@ -1,8 +1,9 @@
 """
-    Flyweight: users
+Flyweight: users
 """
-import string
+
 import random
+import string
 
 
 class User:
@@ -17,25 +18,21 @@ class User2:
         def get_or_add(s):
             if s in self.strings:
                 return self.strings.index(s)
-            else:
-                self.strings.append(s)
-                return len(self.strings) - 1
+            self.strings.append(s)
+            return len(self.strings) - 1
 
-        self.names = [get_or_add(x)
-                      for x in full_name.split(' ')]
+        self.names = [get_or_add(x) for x in full_name.split(" ")]
 
     def __str__(self):
-        return ' '.join([self.strings[x] for x in self.names])
+        return " ".join([self.strings[x] for x in self.names])
 
 
 def random_string():
     chars = string.ascii_lowercase
-    return ''.join(
-        [random.choice(chars) for i in range(8)]
-    )
+    return "".join([random.choice(chars) for i in range(8)])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     users = []
 
     first_names = [random_string() for i in range(100)]
@@ -43,6 +40,6 @@ if __name__ == '__main__':
 
     for first in first_names:
         for last in last_names:
-            users.append(User2(f'{first} {last}'))
+            users.append(User2(f"{first} {last}"))
 
     print(users[0])

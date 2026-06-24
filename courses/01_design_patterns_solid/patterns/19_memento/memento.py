@@ -1,5 +1,5 @@
 """
-    Memento
+Memento
 """
 
 
@@ -20,10 +20,10 @@ class BankAccount:
         self.balance = memento.balance
 
     def __str__(self):
-        return f'Balance = {self.balance}'
+        return f"Balance = {self.balance}"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ba = BankAccount(100)
     m1 = ba.deposit(50)
     m2 = ba.deposit(25)

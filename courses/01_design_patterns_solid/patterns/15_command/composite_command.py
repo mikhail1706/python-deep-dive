@@ -1,6 +1,7 @@
 """
-    Composite Command
+Composite Command
 """
+
 import unittest
 from abc import ABC
 from enum import Enum
@@ -14,19 +15,17 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        print(f'Deposited {amount}, '
-              f'balance = {self.balance}')
+        print(f"Deposited {amount}, balance = {self.balance}")
 
     def withdraw(self, amount):
         if self.balance - amount >= BankAccount.OVERDRAFT_LIMIT:
             self.balance -= amount
-            print(f'Withdrew {amount}, '
-                  f'balance = {self.balance}')
+            print(f"Withdrew {amount}, balance = {self.balance}")
             return True
         return False
 
     def __str__(self):
-        return f'Balance = {self.balance}'
+        return f"Balance = {self.balance}"
 
 
 class Command(ABC):
@@ -46,7 +45,7 @@ class BankAccountCommand(Command):
         WITHDRAW = 1
 
     def __init__(self, account, action, amount):
-        super(BankAccountCommand, self).__init__()
+        super().__init__()
         self.action = action
         self.amount = amount
         self.account = account
@@ -86,14 +85,14 @@ class CompositeBankAccountCommand(Command, list):
 
 class MoneyTransferCommand(CompositeBankAccountCommand):
     def __init__(self, from_acc, to_acc, amount):
-        super().__init__([
-            BankAccountCommand(from_acc,
-                               BankAccountCommand.Action.WITHDRAW,
-                               amount),
-            BankAccountCommand(to_acc,
-                               BankAccountCommand.Action.DEPOSIT,
-                               amount)
-        ])
+        super().__init__(
+            [
+                BankAccountCommand(
+                    from_acc, BankAccountCommand.Action.WITHDRAW, amount
+                ),
+                BankAccountCommand(to_acc, BankAccountCommand.Action.DEPOSIT, amount),
+            ]
+        )
 
     def invoke(self):
         ok = True
@@ -153,13 +152,13 @@ class TestSuite(unittest.TestCase):
         amount = 1000
         transfer = MoneyTransferCommand(ba1, ba2, amount)
         transfer.invoke()
-        print(f'ba1: {ba1}, ba2: {ba2}')
+        print(f"ba1: {ba1}, ba2: {ba2}")
         transfer.undo()
-        print(f'ba1: {ba1}, ba2: {ba2}')
+        print(f"ba1: {ba1}, ba2: {ba2}")
         print(transfer.success)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
     # ba = BankAccount()  # 0
     # cmd = BankAccountCommand(

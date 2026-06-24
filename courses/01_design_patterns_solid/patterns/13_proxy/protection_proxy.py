@@ -1,5 +1,5 @@
 """
-    Protection proxy
+Protection proxy
 """
 
 
@@ -8,7 +8,7 @@ class Car:
         self.driver = driver
 
     def drive(self):
-        print(f'Car is being driven by {self.driver.name}')
+        print(f"Car is being driven by {self.driver.name}")
 
 
 class CarProxy:
@@ -20,7 +20,7 @@ class CarProxy:
         if self.driver.age >= 16:
             self._car.drive()
         else:
-            print('Driver too young')
+            print("Driver too young")
 
 
 class Driver:
@@ -29,7 +29,7 @@ class Driver:
         self.age = age
 
 
-if __name__ == '__main__':
-    driver = Driver('John', 12)
+if __name__ == "__main__":
+    driver = Driver("John", 12)
     car = CarProxy(driver)
     car.drive()

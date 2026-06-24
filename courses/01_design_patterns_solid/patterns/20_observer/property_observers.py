@@ -1,5 +1,5 @@
 """
-    Property Observers
+Property Observers
 """
 
 
@@ -28,31 +28,27 @@ class Person(PropertyObservable):
         if self._age == value:
             return
         self._age = value
-        self.property_changed('age', value)
+        self.property_changed("age", value)
 
 
 class TrafficAuthority:
     def __init__(self, person):
         self.person = person
-        person.property_changed.append(
-            self.person_changed
-        )
+        person.property_changed.append(self.person_changed)
 
     def person_changed(self, name, value):
-        if name == 'age':
+        if name == "age":
             if value < 16:
-                print('Sorry, you still cannot drive')
+                print("Sorry, you still cannot drive")
             else:
-                print('Okay, you can drive now')
-                self.person.property_changed.remove(
-                    self.person_changed
-                )
+                print("Okay, you can drive now")
+                self.person.property_changed.remove(self.person_changed)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p = Person()
     ta = TrafficAuthority(p)
 
     for age in range(14, 20):
-        print(f'Setting age to {age}')
+        print(f"Setting age to {age}")
         p.age = age

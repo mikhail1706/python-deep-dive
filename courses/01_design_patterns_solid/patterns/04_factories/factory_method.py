@@ -1,6 +1,7 @@
 """
-    Factory Method
+Factory Method
 """
+
 from enum import Enum
 from math import *
 
@@ -16,7 +17,7 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return f'x: {self.x}, y: {self.y}'
+        return f"x: {self.x}, y: {self.y}"
 
     # def __init__(self, a, b, system=CoordinateSystem.CARTESIAN):
     #     if system == CoordinateSystem.CARTESIAN:
@@ -35,7 +36,7 @@ class Point:
         return Point(rho * cos(theta), rho * sin(theta))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p = Point(2, 3)
     p2 = Point.new_polar_point(1, 2)
     print(p, p2)

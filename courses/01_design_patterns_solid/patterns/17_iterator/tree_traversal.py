@@ -1,5 +1,5 @@
 """
-    Binary tree iterator
+Binary tree iterator
 """
 
 
@@ -37,16 +37,14 @@ class InOrderIterator:
             while self.current.left:
                 self.current = self.current.left
             return self.current
-        else:
-            p = self.current.parent
-            while p and self.current == p.right:
-                self.current = p
-                p = p.parent
+        p = self.current.parent
+        while p and self.current == p.right:
             self.current = p
-            if self.current:
-                return self.current
-            else:
-                raise StopIteration
+            p = p.parent
+        self.current = p
+        if self.current:
+            return self.current
+        raise StopIteration
 
 
 def travers_in_order(root):
@@ -63,7 +61,7 @@ def travers_in_order(root):
         yield node
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     #   1
     #  / \
     # 2   3
@@ -72,9 +70,7 @@ if __name__ == '__main__':
     # preorder: 123
     # postorder: 231
 
-    root = Node(1,
-                Node(2),
-                Node(3))
+    root = Node(1, Node(2), Node(3))
 
     it = iter(root)
     print([next(it).value for x in range(3)])

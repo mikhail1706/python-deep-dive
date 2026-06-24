@@ -21,13 +21,13 @@ class Journal:
 
     def add_entry(self, text):
         self.count += 1
-        self.entries.append(f'{self.count}: {text}')
+        self.entries.append(f"{self.count}: {text}")
 
     def remove_entry(self, pos):
         del self.entries[pos]
 
     def __str__(self):
-        return '\n'.join(self.entries)
+        return "\n".join(self.entries)
 
     # def save(self, filename):
     #     file = open(filename, 'w')
@@ -44,17 +44,17 @@ class Journal:
 class PersistenceManager:
     @staticmethod
     def save_to_file(journal, filename):
-        file = open(filename, 'w')
+        file = open(filename, "w")
         file.write(str(journal))
         file.close()
 
 
 j = Journal()
-j.add_entry('I cried today')
-j.add_entry('I ate a bug')
-print(f'Journal entries: \n{j}')
+j.add_entry("I cried today")
+j.add_entry("I ate a bug")
+print(f"Journal entries: \n{j}")
 
-file = b'C:/Users/Mike/PycharmProjects/designPatterns/temp/journal.txt'
+file = b"C:/Users/Mike/PycharmProjects/designPatterns/temp/journal.txt"
 PersistenceManager.save_to_file(j, file)
 
 with open(file) as fh:

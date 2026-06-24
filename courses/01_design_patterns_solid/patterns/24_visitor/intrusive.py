@@ -1,5 +1,5 @@
 """
-    Intrusive visitor
+Intrusive visitor
 """
 
 
@@ -20,26 +20,23 @@ class AdditionExpression:
         self.left = left
 
     def print(self, buffer):
-        buffer.append('(')
+        buffer.append("(")
         self.left.print(buffer)
-        buffer.append('+')
+        buffer.append("+")
         self.right.print(buffer)
-        buffer.append(')')
+        buffer.append(")")
 
     def eval(self):
         return self.left.eval() + self.right.eval()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 1 + (2+3)
     e = AdditionExpression(
         DoubleExpression(1),
-        AdditionExpression(
-            DoubleExpression(2),
-            DoubleExpression(3)
-        )
+        AdditionExpression(DoubleExpression(2), DoubleExpression(3)),
     )
 
     buffer = []
     e.print(buffer)
-    print(''.join(buffer), ' = ', e.eval())
+    print("".join(buffer), " = ", e.eval())
