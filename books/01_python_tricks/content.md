@@ -26,5 +26,16 @@
 - Lambdas
 - Decorators
 - *args and **kwargs
-- arguments unpacking
+- Arguments Unpacking
+</details>
+<details>
+<summary>Chapter 4. Classes & OOP</summary>
+
+- `is` vs `==`
+- `__str__` and `__repr__`
+- Custom exceptions
+- Cloning Objects
+- ABC
+- Class vs Instance variables
+- Instance, Class and Static methods
 </details>
