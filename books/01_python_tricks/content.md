@@ -65,3 +65,15 @@
 - Iterators Chains
 
 </details>
+
+<details>
+<summary>Chapter 7. Dictionary Tricks</summary>
+
+- Dict default values
+- Sorting Keys
+- Emulating Switch/Case
+- Craziest dict expression
+- Dict Printing
+
+
+</details>
