@@ -52,3 +52,16 @@
 - Priority Queue
 
 </details>
+
+<details>
+<summary>Chapter 6. Looping & Iteration</summary>
+
+- Loops
+- Comprehensions
+- Slicing and Sushi Operator
+- Beautiful Iterators
+- Generators
+- Generators Expressions
+- Iterators Chains
+
+</details>
