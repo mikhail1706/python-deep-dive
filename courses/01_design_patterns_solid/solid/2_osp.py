@@ -92,7 +92,7 @@ class AndSpecification(Specification):
         self.args = args
 
     def is_satisfied(self, item):
-        return all(map(lambda spec: spec.is_satisfied(item), self.args))
+        return all(spec.is_satisfied(item) for spec in self.args)
 
 
 class BetterFilter(Filter):

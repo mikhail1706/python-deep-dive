@@ -64,7 +64,7 @@ class TextProcessor:
         return "".join(self.buffer)
 
 
-if __name__ == "__main__":
+def main():
     items = ["foo", "bar", "baz"]
 
     tp = TextProcessor()
@@ -76,3 +76,7 @@ if __name__ == "__main__":
     tp.clear()
     tp.append_list(items)
     print(tp)
+
+
+if __name__ == "__main__":
+    main()

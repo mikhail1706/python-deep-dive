@@ -2,7 +2,7 @@
 Template method
 """
 
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Game(ABC):
@@ -18,17 +18,21 @@ class Game(ABC):
 
         print(f"Player {self.winning_player} wins!")
 
+    @abstractmethod
     def start(self):
         pass
 
     @property
+    @abstractmethod
     def have_winner(self):
         pass
 
+    @abstractmethod
     def take_turn(self):
         pass
 
     @property
+    @abstractmethod
     def winning_player(self):
         pass
 

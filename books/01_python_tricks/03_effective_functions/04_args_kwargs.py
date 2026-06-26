@@ -5,9 +5,10 @@ def foo(required, *args, **kwargs):
     if kwargs:
         print(kwargs)
 
-foo('hello')
-foo('hello', 1, 2, 3)
-foo('hello', 1, 2, 3, key1='value', key2=999)
+
+foo("hello")
+foo("hello", 1, 2, 3)
+foo("hello", 1, 2, 3, key1="value", key2=999)
 
 
 ############ Forwarding Optional or Keyword Arguments ############
@@ -16,9 +17,11 @@ class Car:
         self.color = color
         self.mileage = mileage
 
+
 class AlwaysBlueCar(Car):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.color = 'blue'
+        self.color = "blue"
 
-print(AlwaysBlueCar('green', 48392).color)
+
+print(AlwaysBlueCar("green", 48392).color)

@@ -10,6 +10,7 @@ class MyClass:
     def staticmethod():
         return "static method called"
 
+
 obj = MyClass()
 print(obj.method())
 print(MyClass.method(obj))

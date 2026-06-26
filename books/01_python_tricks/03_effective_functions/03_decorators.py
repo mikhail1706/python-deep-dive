@@ -68,8 +68,10 @@ def trace(func):
 
     return wrapper
 
+
 @trace
 def say(name, line):
-    return f'{name}: {line}'
+    return f"{name}: {line}"
 
-say('Jane', 'Hello, World!')
+
+say("Jane", "Hello, World!")

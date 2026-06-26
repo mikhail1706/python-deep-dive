@@ -50,15 +50,12 @@ class InOrderIterator:
 def travers_in_order(root):
     def traverse(current):
         if current.left:
-            for left in traverse(current.left):
-                yield left
+            yield from traverse(current.left)
         yield current
         if current.right:
-            for right in traverse(current.right):
-                yield right
+            yield from traverse(current.right)
 
-    for node in traverse(root):
-        yield node
+    yield from traverse(root)
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ class ExpressionPrinter:
     Expression.print = lambda self, b: ExpressionPrinter.print(self, b)
 
 
-# still breaks OCP because new types require M×N modifications
+# still breaks OCP because new types require M x N modifications
 
 if __name__ == "__main__":
     # represents 1+(2+3)

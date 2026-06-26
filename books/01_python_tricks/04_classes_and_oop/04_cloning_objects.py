@@ -54,6 +54,7 @@ class Rectangle:
     def __repr__(self):
         return f"Rectangle({self.top_left!r}, {self.bottom_right!r})"
 
+
 rect = Rectangle(Point(0, 1), Point(5, 6))
 srect = copy.copy(rect)
 rect.top_left.x = 999

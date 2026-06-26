@@ -44,18 +44,22 @@ class Journal:
 class PersistenceManager:
     @staticmethod
     def save_to_file(journal, filename):
-        file = open(filename, "w")
-        file.write(str(journal))
-        file.close()
+        with open(filename, "w") as f:
+            f.write(str(journal))
 
 
-j = Journal()
-j.add_entry("I cried today")
-j.add_entry("I ate a bug")
-print(f"Journal entries: \n{j}")
+def main():
+    j = Journal()
+    j.add_entry("I cried today")
+    j.add_entry("I ate a bug")
+    print(f"Journal entries: \n{j}")
 
-file = b"C:/Users/Mike/PycharmProjects/designPatterns/temp/journal.txt"
-PersistenceManager.save_to_file(j, file)
+    file = b"C:/Users/Mike/PycharmProjects/designPatterns/temp/journal.txt"
+    PersistenceManager.save_to_file(j, file)
 
-with open(file) as fh:
-    print(fh.read())
+    with open(file) as fh:
+        print(fh.read())
+
+
+if __name__ == "__main__":
+    main()

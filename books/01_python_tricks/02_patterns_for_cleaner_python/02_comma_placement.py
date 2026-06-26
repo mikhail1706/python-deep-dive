@@ -1,5 +1,3 @@
-
-
 # Bad
 names = ["Alice", "Bob", "Delbert"]
 
