@@ -39,3 +39,16 @@
 - Class vs Instance variables
 - Instance, Class and Static methods
 </details>
+
+<details>
+<summary>Chapter 5. Common Data Structures in Python</summary>
+
+- Dict
+- Array Data Structures
+- Records, Structs, and DTO
+- Sets adn Multiset
+- Stacks
+- Queues
+- Priority Queue
+
+</details>
