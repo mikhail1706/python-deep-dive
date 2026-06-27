@@ -2,10 +2,18 @@
 name = "pythoneducation"
 version = "0.1.0"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "ruff>=0.15.19",
+]
 
 [dependency-groups]
 dev = [
     "mypy>=2.1.0",
     "ruff>=0.15.19",
 ]
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_any_generics = false
+allow_redefinition = true
+disable_error_code = ["import-untyped", "var-annotated", "assignment"]
