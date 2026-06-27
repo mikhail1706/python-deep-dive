@@ -75,5 +75,12 @@
 - Craziest dict expression
 - Dict Printing
 
+</details>
+
+<details>
+<summary>Chapter 8. Pythonic Productivity Techniques </summary>
+
+- Exploring Python Modules and Objects
+
 
 </details>
