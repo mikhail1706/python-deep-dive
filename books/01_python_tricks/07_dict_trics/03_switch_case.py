@@ -1,11 +1,11 @@
 def dispatch_if(operator, x, y):
     if operator == "add":
         return x + y
-    elif operator == "sub":
+    if operator == "sub":
         return x - y
-    elif operator == "mul":
+    if operator == "mul":
         return x * y
-    elif operator == "div":
+    if operator == "div":
         return x / y
 
     return None

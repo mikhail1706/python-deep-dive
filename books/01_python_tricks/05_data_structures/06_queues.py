@@ -1,6 +1,6 @@
 from collections import deque
-from queue import Queue
 from multiprocessing import Queue as ProcessQueue
+from queue import Queue
 
 ########## collections.deque ##########
 print("-" * 10, "collections.deque", "-" * 10)

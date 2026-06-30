@@ -1,4 +1,4 @@
-from collections import OrderedDict, defaultdict, ChainMap
+from collections import ChainMap, OrderedDict, defaultdict
 from types import MappingProxyType
 
 phonebook = {
