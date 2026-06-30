@@ -6,3 +6,4 @@
 #### Part I. Data Structures
 * Chapter 1. The Python Data Model
 * Chapter 2. An Array of Sequences
+* Chapter 3. Dictionaries and Sets
