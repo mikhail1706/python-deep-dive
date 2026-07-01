@@ -54,7 +54,7 @@ select = [
     "PL",              # pylint
     "RUF",             # ruff-specific
 ]
-ignore = ["T201", "S311"]
+ignore = ["T201", "S311", "PLR2004", "E741"]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
