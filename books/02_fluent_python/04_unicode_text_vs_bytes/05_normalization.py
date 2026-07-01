@@ -1,4 +1,5 @@
 from unicodedata import normalize
+
 s1 = 'café'
 s2 = 'cafe\N{COMBINING ACUTE ACCENT}'
 print(len(s1), len(s2))
