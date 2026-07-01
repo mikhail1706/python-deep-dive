@@ -8,3 +8,4 @@
 * Chapter 2. An Array of Sequences
 * Chapter 3. Dictionaries and Sets
 * chapter 4. Unicode Text Versus Bytes
+* chapter 5. Data Class Builders
