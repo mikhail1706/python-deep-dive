@@ -9,4 +9,9 @@
 * Chapter 3. Dictionaries and Sets
 * Chapter 4. Unicode Text Versus Bytes
 * Chapter 5. Data Class Builders
-* Chapter 6. Object References, Mutability, and Recycling 
+* Chapter 6. Object References, Mutability, and Recycling
+#### Part II. Data Structures
+* Chapter 7. Functions as First-Class Objects
+  * User-Defined callable types
+  * Keyword params
+  * Positional-onlyParams
