@@ -37,24 +37,30 @@ target-version = "py313"
 
 [lint]
 select = [
-    "E4", "E7", "E9",  # pycodestyle
-    "F",               # pyflakes
-    "I",               # isort
-    "PD",              # pandas-vet
-    "B",               # bugbear
-    "UP",              # pyupgrade
-    "DJ",              # django
-    "C4",              # comprehensions
-    "SIM",             # simplify
-    "S",               # security
-    "T20",             # print statements
-    "RET",             # return statements
-    "PERF",            # performance
-    "N",               # naming
-    "PL",              # pylint
-    "RUF",             # ruff-specific
+    "E4", "E7", "E9", # pycodestyle
+    "F", # pyflakes
+    "I", # isort
+    "PD", # pandas-vet
+    "B", # bugbear
+    "UP", # pyupgrade
+    "DJ", # django
+    "C4", # comprehensions
+    "SIM", # simplify
+    "S", # security
+    "T20", # print statements
+    "RET", # return statements
+    "PERF", # performance
+    "N", # naming
+    "PL", # pylint
+    "RUF", # ruff-specific
 ]
-ignore = ["T201", "S311", "PLR2004", "E741"]
+ignore = [
+    "T201",
+    "S311",
+    "PLR2004",
+    "E741",
+    "UP014",
+]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
